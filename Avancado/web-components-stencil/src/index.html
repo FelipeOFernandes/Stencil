@@ -4,47 +4,19 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
     <title>Stencil Component Starter</title>
+    <style>
+      html {
+        --color-primary: #3910f0;
+        --color-primary-reverse: #fff;
+        --color-primary-highlight: #6f54e6;
+      }
+    </style>
 
     <script type="module" src="/build/web-components-stencil.esm.js"></script>
     <script nomodule src="/build/web-components-stencil.js"></script>
-    <style>
-      body {
-        font-family: sans-serif;
-      }
-      .side-nav ul {
-        list-style: none;
-      }
-      .side-nav a {
-        text-decoration: none;
-        color: black;
-      }
-      .side-nav li {
-        margin: 1rem 0;
-      }
-    </style>
   </head>
   <body>
-    <button id="side-drawer-btn">Open Side Menu</button>
-    <uc-side-drawer mytitle="Main menu">
-      <nav class="side-nav">
-        <ul>
-          <li><a href="/">A link</a></li>
-          <li><a href="/">Another link</a></li>
-          <li><a href="/">A thrid link</a></li>
-        </ul>
-      </nav>
-    </uc-side-drawer>
+    <uc-stock-price stock-symbol="AAPL"></uc-stock-price>
+    <uc-stock-finder></uc-stock-finder>
   </body>
-  <script>
-    const sideDrawerButton = document.querySelector('#side-drawer-btn');
-    const sideDrawer = document.querySelector('uc-side-drawer');
-    sideDrawerButton.addEventListener('click', () => {
-      if (!sideDrawer.open) {
-        sideDrawer.open();
-      }
-    });
-    // setTimeout(() => {
-    //   sideDrawer.mytitle = 'Mudei';
-    // }, 3000);
-  </script>
 </html>
